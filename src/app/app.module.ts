@@ -10,7 +10,7 @@ import { TriviaManagerComponent } from './components/trivia-manager/trivia-manag
 import { TriviaManagerMobileComponent } from './components/trivia-manager-mobile/trivia-manager-mobile.component';
 
 import { QuestionsManagerService } from './services/questions-manager.service';
-import { TriviaStatesDetailsService } from './services/trivia-countries-details.service';
+import { TriviaCountriesDetailsService } from './services/trivia-countries-details.service';
 
 import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome';
 import { GameStageComponent } from './components/game-stage/game-stage.component';
@@ -48,7 +48,7 @@ import { SecondsDisplayPipe } from './pipes/seconds-display.pipe';
   providers: [
     appRoutingProviders,
     QuestionsManagerService,
-    TriviaStatesDetailsService
+    TriviaCountriesDetailsService
   ],
   entryComponents: [
     WelcomeScreenComponent,

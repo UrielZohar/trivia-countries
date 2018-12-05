@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 
 import { TriviaManagerMobileComponent } from '../trivia-manager-mobile/trivia-manager-mobile.component';
 
-import { TriviaStatesDetailsService } from '../../services/trivia-countries-details.service'
+import { TriviaCountriesDetailsService } from '../../services/trivia-countries-details.service'
 import { QuestionsManagerService } from '../../services/questions-manager.service';
 import { TriviaManagerComponent } from '../trivia-manager/trivia-manager.component';
 
@@ -22,7 +22,7 @@ export class WelcomeScreenComponent {
   public imgPath;
   
   constructor(
-    private triviaStatesDetailsService: TriviaStatesDetailsService,
+    private triviaCountriesDetailsService: TriviaCountriesDetailsService,
     private questionsManagerService: QuestionsManagerService,
     private router: Router) {
     if (window.document.documentElement.clientWidth < 768) {
@@ -31,7 +31,7 @@ export class WelcomeScreenComponent {
       this.imgPath = "../../../assets/images/whoWantsToBeMillionare.png";
     }
     // update the routes
-    if (this.triviaStatesDetailsService.getIsMobile()) {
+    if (this.triviaCountriesDetailsService.getIsMobile()) {
       this.router.config.unshift({ path: 'Canada/Play', component: TriviaManagerMobileComponent });
     } else {
       this.router.config.unshift({ path: 'Canada/Play', component: TriviaManagerComponent });

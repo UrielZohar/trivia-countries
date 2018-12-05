@@ -6,7 +6,7 @@ import {
 import { TriviaManagerComponent } from '../trivia-manager/trivia-manager.component';
 import { QuestionsManagerService } from 'src/app/services/questions-manager.service';
 import { Router } from '@angular/router';
-import { TriviaStatesDetailsService } from 'src/app/services/trivia-countries-details.service';
+import { TriviaCountriesDetailsService } from 'src/app/services/trivia-countries-details.service';
 
 @Component({
   selector: 'app-trivia-manager-mobile',
@@ -19,11 +19,11 @@ export class TriviaManagerMobileComponent extends TriviaManagerComponent {
     questionManager: QuestionsManagerService, 
     elementEl: ElementRef,
     router: Router,
-    triviaStatesDetailsService: TriviaStatesDetailsService) {
+    triviaCountriesDetailsService: TriviaCountriesDetailsService) {
     super(questionManager, 
       elementEl,
       router,
-      triviaStatesDetailsService);
+      triviaCountriesDetailsService);
    }
 
 }

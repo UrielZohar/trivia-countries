@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 import { QuestionsManagerService } from 'src/app/services/questions-manager.service';
 
 import { GameStageComponent } from '../game-stage/game-stage.component';
-import { TriviaStatesDetailsService } from 'src/app/services/trivia-countries-details.service';
+import { TriviaCountriesDetailsService } from 'src/app/services/trivia-countries-details.service';
 import { TimerComponent } from '../timer/timer.component';
 
 
@@ -40,7 +40,7 @@ export class TriviaManagerComponent implements OnInit {
 		private questionManager: QuestionsManagerService, 
 		private elementEl: ElementRef,
 		private router: Router,
-		private triviaStatesDetailsService: TriviaStatesDetailsService) {
+		private triviaCountriesDetailsService: TriviaCountriesDetailsService) {
 		// load the audios
 		this.correctAnswerAudio = new Audio();
 		this.correctAnswerAudio.src = '../../../assets/audios/correctAnswer.mp3';
@@ -55,10 +55,10 @@ export class TriviaManagerComponent implements OnInit {
 		this.questionBackgroundAudio.load();
 
 		// mute
-		this.isMuted = triviaStatesDetailsService.getIsMuted();
+		this.isMuted = triviaCountriesDetailsService.getIsMuted();
 		this.setMuteCfg();
 
-		if (triviaStatesDetailsService.getIsMobile()) {
+		if (triviaCountriesDetailsService.getIsMobile()) {
 			// on onblur and on focus
 			window.onblur =  () => {
 				console.log("Blur");
@@ -173,7 +173,7 @@ export class TriviaManagerComponent implements OnInit {
 	toggleMute() {
 		this.isMuted = !this.isMuted;
 		this.setMuteCfg();
-		this.triviaStatesDetailsService.toggleMute();
+		this.triviaCountriesDetailsService.toggleMute();
 	}
 
 	private setMuteCfg() {

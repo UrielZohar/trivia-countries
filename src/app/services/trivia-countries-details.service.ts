@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 	providedIn: 'root'
 })
 */
-export class TriviaStatesDetailsService {
+export class TriviaCountriesDetailsService {
     private isMobile;
     private mobileLimit = 768;
     private isMuted = false;
