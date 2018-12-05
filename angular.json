@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "trivia-states": {
+    "trivia-countries": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/trivia-states",
+            "outputPath": "dist/trivia-countries",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -53,18 +53,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "trivia-states:build"
+            "browserTarget": "trivia-countries:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "trivia-states:build:production"
+              "browserTarget": "trivia-countries:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "trivia-states:build"
+            "browserTarget": "trivia-countries:build"
           }
         },
         "test": {
@@ -98,7 +98,7 @@
         }
       }
     },
-    "trivia-states-e2e": {
+    "trivia-countries-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -106,11 +106,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "trivia-states:serve"
+            "devServerTarget": "trivia-countries:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "trivia-states:serve:production"
+              "devServerTarget": "trivia-countries:serve:production"
             }
           }
         },
@@ -126,5 +126,5 @@
       }
     }
   },
-  "defaultProject": "trivia-states"
+  "defaultProject": "trivia-countries"
 }
