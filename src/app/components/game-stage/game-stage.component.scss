@@ -1,0 +1,59 @@
+
+.stages {
+    width: 150px;
+    box-shadow: 0px 0px 30px 10px #41109c;
+    color: #ca781a;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #0b1456;
+
+    .stage {
+        margin: 0 auto;
+        background-image:  radial-gradient(#687cb5 7.14%, #0b1456 92%);
+        height: 38px;
+        line-height: 38px;
+
+        &.passed {
+            background-color: #28e49c;
+            background-image: none;
+            color: white;
+        }
+
+        &.current-stage {
+            border: 3px solid #ca781a;
+            line-height: 31px;
+        }
+
+        &.blink-me {
+            background-color: #0b1456;
+            animation: stageBlinker 1s linear infinite;
+        }
+
+        @keyframes stageBlinker {
+            50% {
+              opacity: 0.5;
+            }
+        }
+    }
+    
+    
+
+}
+
+:host-context(.mobile-mode) {
+    width: 100%;
+    margin: 5px 0 10px 0;
+
+    .stages {
+        position: relative;
+        margin: 0 auto;
+        .stage {
+            height: auto;
+            border: none;
+            
+            &.current-stage {
+                height: 32px;
+            }
+        }
+    }
+}

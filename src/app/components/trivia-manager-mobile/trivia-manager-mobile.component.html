@@ -1,0 +1,30 @@
+<div 
+  class="play-screen">
+  <div class="game-bar">
+    <div 
+      class="audio-mute-toggle" 
+      (click)="toggleMute()">
+      <span class="fa-stack">
+        <i class="fa fa-ban fa-stack-2x" *ngIf="!isMuted"></i>
+        <i class="fa fa-volume-up fa-stack-1x"></i>
+      </span>
+    </div>
+    <div class="game-stage">
+        <app-game-stage-mobile 
+        [currentStage]="currentStage" 
+        #gameStage>
+      </app-game-stage-mobile>
+    </div>
+    <div class="time-left-timer">
+      <app-timer 
+        [cfg]="{ initialTime: 30, timeToStartShow: 30 }"
+        (timerTimeout)="questionTimeout()"
+        #gameTimer>
+      </app-timer>
+    </div>
+  </div>
+  <app-question-mobile
+    #currentQuestion 
+    (selectedAnswer)="checkAnswer($event)">
+  </app-question-mobile>
+</div> 

@@ -1,0 +1,210 @@
+.title, .answer {
+    position: relative;
+    background-color: #41109c;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: 3px solid #ca781a;
+    border-left: none;
+    border-right: none;
+    margin: 0 auto;
+
+    &::before {
+        content: "";
+        display: inline-block;
+        background-color: #41109c;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        left: -25px;
+        top: 7px;
+        border: 3px solid #ca781a;
+        border-right: none;
+        border-top: none;
+        z-index: -1;
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        background-color: #41109c;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        right: -25px;
+        top: 7px;
+        border: 3px solid #ca781a;
+        border-bottom: none;
+        border-left: none;
+        z-index: -1;
+    }
+}
+
+
+.pair {
+    margin-bottom: 15px;
+    height: 60px;
+}
+
+.title {
+    margin-bottom: 13px;
+    max-width: 750px;
+    width: 90%;
+    .question-section {
+        display: flex;
+        height: 64px;
+        .question-par {
+            margin: auto; /* Important */
+            text-align: center;
+            padding: 5px;
+        }
+    }
+}
+.answers {
+    max-width: 750px;
+    width: 90%;
+    margin: 0 auto;
+    
+}
+
+.answer {
+    display: inline-block;
+    cursor: pointer;
+    width: 42%;
+    text-align: left;
+    padding-left: 10px;
+
+    .answer-section {
+        display: flex;
+        height: 54px;
+        .answer-par {
+            margin: auto; /* Important */
+            text-align: center;
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        border: 3px solid #ca781a;
+        width: 42px;
+        height: 42px;
+        left: -22px;
+        top: 6px;
+    }
+
+    &::after {
+        content: "";
+        width: 42px;
+        height: 42px;
+        position: absolute;
+        right: -22px;
+        top: 6px;
+        border: 3px solid #ca781a;
+    }
+    
+    &.wrong-answer {
+        background-color: #da8c33;
+
+        &::before {
+            background-color: #da8c33;
+        }
+
+        &::after {
+            background-color: #da8c33;
+        }
+    }
+
+    &.correct-answer {
+        background-color: #28e49c;
+        border: 3px solid #82e7ee;
+        border-left: none;
+        border-right: none;
+        animation: correctAnswerBlinker 1s linear infinite;
+
+        @keyframes correctAnswerBlinker {
+            50% {
+              opacity: 0.5;
+            }
+        }
+        
+        &::before {
+            background-color: inherit;
+            border-left: 3px solid #82e7ee;
+            border-top: none;
+            border-bottom: 3px solid #82e7ee;
+            border-right: none;
+        }
+        
+        &::after {
+            background-color: inherit;
+            border-left: none;
+            border-top: 3px solid #82e7ee;
+            border-bottom: none;
+            border-right: 3px solid #82e7ee;
+        }
+    }
+}
+
+:host-context(.desktop-mode) {
+    .answer {
+        &:hover {
+            background-color: #da8c33;
+            
+            &::before {
+                background-color: #da8c33;
+            }
+            
+            &::after {
+                background-color: #da8c33;
+            }
+        }
+    }
+}
+
+:host-context(.mobile-mode) {
+    width: 93%;
+    margin: 0 auto;
+
+    .title {
+        width: 78%;
+        margin: 0 auto;
+
+        .question-section {
+            height: 110px;
+            font-size: 16px;
+        }
+
+        &::before {
+            width: 64px;
+            height: 64px;
+            position: absolute;
+            left: -32px;
+            top: 23px;
+            transform: rotate(45deg) skew(16deg, 16deg); 
+        }
+
+        &::after {
+            width: 64px;
+            height: 64px;
+            position: absolute;
+            right: -32px;
+            top: 23px;
+            transform: rotate(45deg) skew(16deg, 16deg);
+        }
+    }
+    .pair {
+        margin-bottom: 0px;
+    }
+    .answer {
+        width: 90%;
+        margin-top: 10px;
+        font-size: 15px;
+        padding-left: 0px;
+    }
+}
+
