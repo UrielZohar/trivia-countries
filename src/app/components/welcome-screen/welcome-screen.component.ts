@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 
 import { TriviaManagerMobileComponent } from '../trivia-manager-mobile/trivia-manager-mobile.component';
 
-import { TriviaStatesDetailsService } from '../../services/trivia-states-details.service'
+import { TriviaStatesDetailsService } from '../../services/trivia-countries-details.service'
 import { QuestionsManagerService } from '../../services/questions-manager.service';
 import { TriviaManagerComponent } from '../trivia-manager/trivia-manager.component';
 

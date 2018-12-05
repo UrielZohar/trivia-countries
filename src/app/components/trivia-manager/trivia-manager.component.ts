@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 import { QuestionsManagerService } from 'src/app/services/questions-manager.service';
 
 import { GameStageComponent } from '../game-stage/game-stage.component';
-import { TriviaStatesDetailsService } from 'src/app/services/trivia-states-details.service';
+import { TriviaStatesDetailsService } from 'src/app/services/trivia-countries-details.service';
 import { TimerComponent } from '../timer/timer.component';
 
 
