@@ -33,6 +33,7 @@
 }
 
 :host-context(.mobile-mode) {
+    position: fixed;
     background-image: linear-gradient(to right, #391657, #341A6799);
     display: block;
 
