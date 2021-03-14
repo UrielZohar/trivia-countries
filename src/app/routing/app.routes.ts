@@ -1,6 +1,6 @@
 import { Routes, RouterModule } from '@angular/router';
 import { WelcomeScreenComponent } from '../components/welcome-screen/welcome-screen.component';
-import { TriviaManagerMobileComponent } from '../components/trivia-manager-mobile/trivia-manager-mobile.component';
+//import { TriviaManagerMobileComponent } from '../components/trivia-manager-mobile/trivia-manager-mobile.component';
 import { PrizeMoneyComponent } from '../components/prize-money/prize-money.component';
 
 export const routes: Routes = [
