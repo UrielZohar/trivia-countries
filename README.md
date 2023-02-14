@@ -1,6 +1,6 @@
 # Demo
 
-See this repository in [DEMO](https://trivia-countries.herokuapp.com/Canada/Welcome)
+See this repository in [DEMO](https://trivia-countries.s3.eu-west-1.amazonaws.com/index.html)
 
 # TriviaCountris
 
